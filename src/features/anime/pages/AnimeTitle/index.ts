@@ -1,0 +1,1 @@
+export { AnimeTitle } from './AnimeTitle';

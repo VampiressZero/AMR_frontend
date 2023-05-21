@@ -1,0 +1,14 @@
+:root {
+  --accent-color-1: #9e9be5;
+  --accent-color-2: #7673D9;
+  --accent-color-3: #a7a7a7;
+  --primary-color: #7673D9;
+  --primary-contrast-color: white;
+  --primary-dark-color: #ea580c;
+  --primary-dark-contrast-color: white;
+  --primary-light-color: #9e9be5;
+  --primary-light-contrast-color: #aeabfb;
+  --background-color: white;
+  --background-contrast-color: black;
+  --error-color: red;
+}

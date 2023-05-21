@@ -1,0 +1,27 @@
+@font-face {
+  font-family: Butler;
+  src: url(./fonts/Butler_Regular.otf);
+  font-size: 16px;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: auto;
+  margin-bottom: 25px;
+}
+
+img {
+  height: 225px;
+  width: 160px;
+  cursor: pointer;
+}
+
+.grid__images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}

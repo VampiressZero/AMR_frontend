@@ -1,0 +1,52 @@
+a,
+:link,
+.link {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover,
+:link:hover,
+.link:hover {
+  --link-color: var(--primary-light-color);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+button,
+select {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+select {
+  padding: 5px 15px;
+  font-size: 0.8em;
+  outline: none;
+}
+
+select:focus {
+  outline: 1px solid var(--heading-color-3);
+}
+
+th {
+  text-align: left;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}

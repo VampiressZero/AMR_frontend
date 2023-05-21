@@ -1,0 +1,67 @@
+
+.text_popular{
+  display: flex;
+  justify-content: flex-start;
+  align-items:flex-end;
+}
+.text_all_anime{
+  margin-left: 30px;
+}
+
+.slider{
+  display: grid;
+  grid-template-columns: repeat(7, 160px);
+  column-gap: 15px;
+  margin: auto;
+}
+
+.title_ongoing {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.ongoings_image {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.title_schedule {
+  display: flex;
+  justify-content: center;
+  font-size: 1.3rem;
+  background-color: var(--primary-color);
+  padding: 7px 10px;
+  color: white;
+}
+
+.day_week_name {
+  background-color: var(--primary-light-color) !important;
+  color: white !important;
+}
+
+.day_week_name:hover {
+  background-color: var(--primary-light-contrast-color) !important;
+  color: white;
+}
+
+.round_picture {
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  float: left;
+  border-radius: 50%;
+}
+
+.schedule_item{
+  list-style-type: none;
+  padding: 5px !important;
+  display: grid !important;
+  justify-content: space-between !important;
+  text-align: left !important;
+  grid-template-columns: 50px auto 110px;
+  column-gap: 10px;
+  align-items:center !important;
+}

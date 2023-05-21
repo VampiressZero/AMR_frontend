@@ -1,0 +1,1 @@
+export { MangaShortPage } from './MangaShort';
