@@ -4,9 +4,9 @@ import HelpOutlinedIcon from '@mui/icons-material/HelpOutlined';
 import { Field, Form, FormikProvider, useFormik } from 'formik';
 import { CheckboxWithLabel } from 'formik-mui';
 import { AnimeFilter, initValues } from 'features/anime/components/animeSettings/animeFilters';
+import { AnimeStatus } from 'store/core/models/animeCommon';
 
 import styles from './AnimeAllTitles.module.css';
-import { AnimeStatus } from 'store/core/models/animeCommon';
 
 /** Anime all title page component. */
 const AnimeAllTitlesComponent: FC = () => {

@@ -1,8 +1,8 @@
-import { Collapse, Grid, Link, List, ListItem, ListItemButton, ListItemIcon, ListItemText, ListSubheader } from '@mui/material';
-import { FC, Fragment, memo, useCallback, useEffect, useState } from 'react';
+import { Collapse, Grid, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
+import { FC, Fragment, memo, useEffect, useState } from 'react';
 
 import { useAppDispatch, useAppSelector } from 'store';
-import { ExpandLess, ExpandMore, StarBorder } from '@mui/icons-material';
+import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import styles from './AnimePage.module.css';
 import { fetchAnimeById } from 'store/animeExtender/dispatchers';
 import { selectAnimeIdList, selectAnimeList } from 'store/animeCommon/selectors';
@@ -90,33 +90,11 @@ const AnimePageComponent: FC = () => {
             )}
           </List>
 
-          {/* 
-            <ul className="ongoingsWeekDay displayNone">
-              <li className="ongoingsWeekDay-item" title="Реикарнация">
-                <img className="roundPicture" src="../img/45576.jpg" alt="Реикарнация" title="Реикарнация" />
-                <p>Реинкарнация безработного: История о приключениях в другом мире</p>
-                <p>10 серия <br /> (2 янв. 17:15)</p>
-              </li>
-              <li className="ongoingsWeekDay-item">
-                <img className="roundPicture" src="../img/38524.jpg" alt="Атака титанов" title="Атака титанов" />
-                <p>Атака титанов</p>
-                <p>10 серия <br /> (2 янв. 17:15)</p></li>
-            </ul> */}
-
         </Grid>
         <Grid item xs={7.5}>
           <h2 className={styles.title_ongoing}>Онгоинги</h2>
           <div className='grid__images'>
             {animeList.map((anime: AnimeCommon) => <AnimeShortPage key={anime.id} anime={anime} />)}
-            {/* <a href="animeTitle.html"><img src="../img/38524.jpg" /></a>
-            <a href="animeTitle.html"><img src="../img/40834.jpg" /></a>
-            <a href="animeTitle.html"><img src="../img/45576.jpg" /></a>
-            <a href="animeTitle.html"><img src="../img/5114.jpg" /></a>
-            <a href="animeTitle.html"><img src="../img/9253.jpg" /></a>
-            <a href="animeTitle.html"><img src="../img/47790.jpg" /></a>
-            <a href="animeTitle.html"><img src="../img/48569.jpg" /></a> */}
-            {/* <AnimeShortPage /> */}
-
           </div>
         </Grid>
       </Grid>

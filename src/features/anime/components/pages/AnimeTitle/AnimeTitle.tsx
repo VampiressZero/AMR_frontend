@@ -1,34 +1,25 @@
-import { Box, Fab, Grid, List, Tooltip } from '@mui/material';
-import { FC, memo, useCallback, useEffect, useState } from 'react';
-import image from 'images/1.jpg';
+import { Grid } from '@mui/material';
+import { FC, memo, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
-import styles from './AnimeTitle.module.css';
 import { useAppDispatch, useAppSelector } from 'store';
-import { ModeEdit } from '@mui/icons-material';
-import { useLocation, useSearchParams } from 'react-router-dom';
-
-import { AnimeFull, AnimeRating, AnimeSeason, AnimeSource } from 'store/core/models/animeFull';
-// import { AnimeStatus } from 'store/core/models/animeCommon';
 import { VideoPlayer } from 'features/anime/components/VideoPlayer';
 import { selectAnimeById } from 'store/animeExtender/selectors';
 import { fetchAnimeById } from 'store/animeExtender/dispatchers';
 import { formatDate } from 'features/utils';
 
-// import video from 'videos/112.mp4';
+import styles from './AnimeTitle.module.css';
 
 const INITIAL_ID = 0;
 
 /** Anime page component. */
 const AnimeTitleComponent: FC = () => {
-  const [searchParams] = useSearchParams();
   const location = useLocation()
-  console.log(location.pathname);
   const [id, setId] = useState(INITIAL_ID);
 
 
   useEffect(() => {
     const idParam = Number(location.pathname.replace('/anime/', ''));
-
     if (idParam !== INITIAL_ID && idParam !== id) {
       setId(idParam);
       dispatch(fetchAnimeById(idParam));

@@ -9,7 +9,6 @@ export const animeCommonListSlice = createSlice({
   initialState,
   reducers: {
     addAnimeCommon(state, action: { payload: AnimeCommon; }) {
-      console.log(1, action.payload)
       animeAdapter.setOne(state as State, action.payload);
       state.listIds.push(action.payload.id);
     },

@@ -10,8 +10,6 @@ export const fetchAnimeById = createAsyncThunk(
   'anime/fetchAnimeById',
   async(id: number, { dispatch }) => {
     const animeFull = await AnimeService.fetchAnimeById(id);
-    console.log(12);
-    
 
     dispatch(addAnimeCommon(animeFull as AnimeCommon));
     // dispatch(addStudios([...animeFull.studiosData]));

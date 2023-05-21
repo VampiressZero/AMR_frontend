@@ -1,13 +1,11 @@
-import { Collapse, Grid, Link, List, ListItem, ListItemButton, ListItemIcon, ListItemText, ListSubheader } from '@mui/material';
-import { FC, Fragment, memo, useCallback, useEffect, useState } from 'react';
+import { Grid } from '@mui/material';
+import { FC, memo, useEffect, useState } from 'react';
 
 import { useAppDispatch, useAppSelector } from 'store';
-import { ExpandLess, ExpandMore, StarBorder } from '@mui/icons-material';
 import styles from './MangaPage.module.css';
 import { fetchAnimeById } from 'store/animeExtender/dispatchers';
 import { selectAnimeIdList, selectAnimeList } from 'store/animeCommon/selectors';
 import { AnimeCommon } from 'store/core/models/animeCommon';
-import { AnimeShortPage } from 'features/anime/components/AnimeShort';
 import { MangaShortPage } from 'features/manga/components/MangaShort';
 
 const DayOfWeek = [
@@ -62,36 +60,6 @@ const MangaPageComponent: FC = () => {
         </Grid>
       </Grid>
       <Grid spacing={1} container item>
-        {/* <Grid item xs={4.5}>
-          <List
-            sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
-            component="nav"
-            aria-labelledby="nested-list-subheader"
-            subheader={
-              <h3 className={styles.title_schedule}> Расписание </h3>
-            }
-          >
-            {DayOfWeek.map((item: string, i: number) =>
-              <Fragment key={i}>
-              <div>
-                <ListItemButton className={styles.day_week_name} onClick={() => handleDisplayDayOfWeek(i)}>
-                  <ListItemText primary={item} />
-                  {isDisplayDayOfWeek[i] ? <ExpandLess /> : <ExpandMore />}
-                </ListItemButton>
-              </div><Collapse in={isDisplayDayOfWeek[i]} timeout="auto" unmountOnExit>
-                  <List component="div" disablePadding>
-                    <ListItem key={i+100} className={styles.schedule_item} sx={{ pl: 4 }}>
-                      <img className={styles.round_picture} src="../img/45576.jpg" alt="Реикарнация" title="Реикарнация" />
-                      <p>Реинкарнация безработного: История о приключениях в другом мире</p>
-                      <p style={{ textAlign: 'end' }}>10 серия <br /> (2 янв. 17:15)</p>
-                    </ListItem>
-                  </List>
-                </Collapse>
-              </Fragment>
-            )}
-          </List>
-
-        </Grid> */}
         <Grid item xs={12}>
           <h2 className={styles.title_ongoing}>Онгоинги</h2>
           <div className='grid__images'>

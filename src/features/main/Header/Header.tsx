@@ -1,10 +1,9 @@
-import { Box, Grid, InputBase, List, Modal, Typography } from '@mui/material';
-import { FC, PropsWithChildren, memo, useCallback, useState } from 'react';
+import { Box, InputBase, Modal } from '@mui/material';
+import { FC, PropsWithChildren, memo, useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import { alpha, styled } from '@mui/material/styles';
 
 import styles from './Header.module.css';
-import { useAppDispatch, useAppSelector } from 'store';
 import { LoginPage } from 'features/auth/pages/LoginPage';
 
 /** Anime page component. */
