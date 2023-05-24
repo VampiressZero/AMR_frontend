@@ -13,12 +13,10 @@ export namespace AnimeFullMapper {
    * Maps dto to model.
    * @param dto Anime dto.
    */
-  export function fromDto(dto: AnimeFullDto): AnimeFull {
-    console.log();
-    
+  export function fromDto(dto: AnimeFullDto): AnimeFull {    
     return ({
       id: dto.id,
-      image: 'https://' + dto.cover,
+      image: dto.cover,
       titleRussian: dto.russianName,
       titleEnglish: dto.englishName,
       titleOriginal: dto.originalName,

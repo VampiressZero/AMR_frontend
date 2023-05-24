@@ -30,9 +30,10 @@ export namespace AnimeService {
       url.append('type__in', String(types));
       url.append('ordering', String(AnimeSortMapper.toDto(params.sort)));
     }
-    const { data } = await http.get<PaginationDto<AnimeCommonDto>>(`${animeUrl}?${url}`);
-    setAnimeListNextUrl(data.next);
-    return data.results.map(anime => AnimeCommonMapper.fromDto(anime));
+    // const { data } = await http.get<AnimeCommonDto[]>(`${animeUrl}?${url}`);
+    const { data } = await http.get<AnimeCommonDto[]>(animeUrl);
+
+    return data.map(anime => AnimeCommonMapper.fromDto(anime));
   }
 
   /** Fetches the next list of anime. */

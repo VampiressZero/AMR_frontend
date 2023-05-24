@@ -8,6 +8,7 @@ import { fetchAnimeById } from 'store/animeExtender/dispatchers';
 import { selectAnimeIdList, selectAnimeList } from 'store/animeCommon/selectors';
 import { AnimeCommon } from 'store/core/models/animeCommon';
 import { AnimeShortPage } from 'features/anime/components/AnimeShort';
+import { fetchAnimeList } from 'store/animeCommon/dispatchers';
 
 const DayOfWeek = [
   'Понедельник',
@@ -32,11 +33,13 @@ const AnimePageComponent: FC = () => {
   ]);
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(fetchAnimeById(6))
+    dispatch(fetchAnimeList())
+    // dispatch(fetchAnimeById(6))
   }, [dispatch])
 
   const animeIdList = useAppSelector(selectAnimeIdList);
   const animeList = useAppSelector(state => selectAnimeList(state, animeIdList));
+  
 
   const handleDisplayDayOfWeek = (index: number) => {
     setIsDisplayDayOfWeek(isDisplayDayOfWeek.map((isDisplayDay, i) => {

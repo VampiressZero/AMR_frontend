@@ -1,4 +1,10 @@
-.video-box {
-  margin: auto;
-  margin-top: 25px;
+.video {
+  margin: auto !important;
+  margin-top: 25px !important;
+  position: relative;
+  padding: 0 !important;
+}
+
+.video div video{
+  object-fit: cover;
 }

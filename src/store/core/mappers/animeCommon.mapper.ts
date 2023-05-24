@@ -8,10 +8,11 @@ export namespace AnimeCommonMapper {
    * @param dto Anime dto.
    */
   export function fromDto(dto: AnimeCommonDto): AnimeCommon {
+    console.log(dto.cover);
 
     return ({
       id: dto.id,
-      image: 'https://' + dto.cover,
+      image: dto.cover,
       titleEnglish: dto.englishName,
       titleOriginal: dto.originalName,
       titleRussian: dto.russianName,

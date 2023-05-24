@@ -86,7 +86,7 @@ const AnimeTitleComponent: FC = () => {
         </Grid>
       </Grid>
 
-      {anime.episodes &&
+      {anime?.episodes &&
         <VideoPlayer videosSrc={[anime.episodes[0].video]} />
       }
     </Grid>

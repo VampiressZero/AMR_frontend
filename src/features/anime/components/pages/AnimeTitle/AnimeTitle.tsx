@@ -34,8 +34,7 @@ const AnimeTitleComponent: FC = () => {
       <Grid item xs={3}>
         <img
           className={styles['anime__image']}
-          alt={`image of anime ${anime.titleEnglish || anime.titleOriginal
-            }`}
+          alt={anime.titleEnglish || anime.titleOriginal}
           src={anime.image}
         />
       </Grid>

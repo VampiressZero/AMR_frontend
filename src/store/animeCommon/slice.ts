@@ -18,12 +18,15 @@ export const animeCommonListSlice = createSlice({
       state.isLoading = true;
     })
     .addCase(fetchAnimeList.fulfilled, (state, action) => {
+      console.log(action.payload);
+      
       animeAdapter.addMany(state as State, action.payload);
       state.listIds = action.payload.map(anime => anime.id);
       state.isLoading = false;
       state.hasNext = true;
     })
     .addCase(fetchAnimeList.rejected, (state, action) => {
+      console.log(action.payload);
       if (action.error.message) {
         state.error = action.error.message;
       }

@@ -7,8 +7,7 @@ import { CONFIG } from './config';
 export const http: AxiosInstance = axios.create({
   baseURL: CONFIG.apiUrl,
   headers: {
-    'Access-Control-Allow-Origin': 'http://localhost:3000/',
-    'Access-Control-Allow-Credentials': true
+    'Access-Control-Allow-Origin': '*'
   }
 });
 
