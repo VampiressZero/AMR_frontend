@@ -18,8 +18,6 @@ import html2canvas from 'html2canvas';
 
 import { PrettoSlider } from './PrettoSlider';
 import styles from './ControlIcons.module.css';
-import { error } from 'console';
-
 interface Props {
 
   /** Handle play and pause. */
@@ -126,26 +124,26 @@ const ControlIconsComponent = forwardRef<HTMLDivElement, Props>(({
         canvasRef.current.height = video.videoHeight;
         const ctx = (canvasRef.current.getContext('2d') as CanvasRenderingContext2D);
         ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
-      const qw = html2canvas(canvasRef.current, {
-        allowTaint: true,
-        foreignObjectRendering: true,
-        useCORS: true
-      })
-      qw.then((canvas) => {
-        console.log(canvas);
-        const q = canvas.toDataURL();
-        console.log(q);
+      // const qw = html2canvas(canvasRef.current, {
+      //   allowTaint: true,
+      //   foreignObjectRendering: true,
+      //   useCORS: true
+      // })
+      // qw.then((canvas) => {
+      //   console.log(canvas);
+      //   const q = canvas.toDataURL();
+      //   console.log(q);
         
-        const tmpLink = document.createElement('a');
-        tmpLink.download = 'image.png';
-        tmpLink.href = q;
-        document.body.appendChild(tmpLink);
-        tmpLink.click();
-        document.body.removeChild(tmpLink);
-      }).catch((error) => {
-        console.log(error);
+      //   const tmpLink = document.createElement('a');
+      //   tmpLink.download = 'image.png';
+      //   tmpLink.href = q;
+      //   document.body.appendChild(tmpLink);
+      //   tmpLink.click();
+      //   document.body.removeChild(tmpLink);
+      // }).catch((error) => {
+      //   console.log(error);
 
-      });
+      // });
 
       try {
         console.log(canvasRef.current.toDataURL("image/png", 1));
